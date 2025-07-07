@@ -697,57 +697,73 @@ a:focus {
 }
 
 .gallery_section .gallery_container .gallery_box {
-  width: 85%;
+  width: 90%; /* Increased width for better spacing */
   margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; /* Allow items to wrap to the next line */
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; /* Center items */
 }
 
 .gallery_section .gallery_container .box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.gallery_section .gallery_container .box.b1 .img-box {
-  margin-left: 8%;
-}
-
-.gallery_section .gallery_container .box.b3 {
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-}
-
-.gallery_section .gallery_container .box.b4 {
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-}
-
-.gallery_section .gallery_container .box.b4 .img-box {
-  margin-right: 8%;
-}
+/* Removed specific box styling like b1, b3, b4 to allow flexbox to handle layout */
 
 .gallery_section .gallery_container .box .img-box {
   position: relative;
-  margin: 10px;
-  border-radius: 35px;
+  margin: 15px; /* Increased margin for better spacing */
+  border-radius: 10px; /* Slightly reduced border-radius */
   overflow: hidden;
-  width: 350px;
+  width: 300px; /* Standardized width */
+  height: 250px; /* Standardized height */
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added a subtle shadow */
+  -webkit-transition: -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.gallery_section .gallery_container .box .img-box:hover {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px); /* Slight upward lift on hover */
+  -webkit-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
 
 .gallery_section .gallery_container .box .img-box img {
   width: 100%;
+  height: 100%; /* Ensure image fills the card */
+  -o-object-fit: cover;
+     object-fit: cover; /* Cover the area, cropping if necessary */
 }
 
 .gallery_section .gallery_container .box .img-box h5 {
-  color: #031003;
+  color: #ffffff; /* Changed color for better visibility if needed over images */
+  background-color: rgba(0, 0, 0, 0.5); /* Added background for text */
+  padding: 5px 10px;
+  border-radius: 5px;
   position: absolute;
   margin: 0;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  bottom: 10px; /* Positioned at the bottom */
+  left: 10px; /* Positioned at the left */
+  -webkit-transform: none;
+          transform: none;
   text-transform: uppercase;
+  font-size: 0.9rem; /* Adjusted font size */
 }
 
 .blog_section .detail-box {
@@ -940,6 +956,123 @@ a:focus {
   width: 100%;
 }
 
+/* contact section */
+.contact_section {
+  position: relative;
+  padding-top: 75px; /* Added padding top */
+}
+
+.contact_section .heading_container {
+  margin-bottom: 45px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center; /* Center heading */
+}
+
+.contact_section .heading_container h2 {
+  color: #ffffff; /* Ensure heading is visible */
+}
+
+.contact_section .form_container input {
+  width: 100%;
+  border: none;
+  height: 50px;
+  margin-bottom: 25px;
+  padding-left: 20px;
+  outline: none;
+  color: #101010;
+  background: #ffffff;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.05);
+          box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.05);
+}
+
+.contact_section .form_container input::-webkit-input-placeholder {
+  color: #a0a0a0;
+}
+
+.contact_section .form_container input:-ms-input-placeholder {
+  color: #a0a0a0;
+}
+
+.contact_section .form_container input::-ms-input-placeholder {
+  color: #a0a0a0;
+}
+
+.contact_section .form_container input::placeholder {
+  color: #a0a0a0;
+}
+
+.contact_section .form_container input.message-box {
+  height: 120px;
+}
+
+.contact_section .form_container .btn_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 10px;
+}
+
+.contact_section .form_container .btn_box button {
+  display: inline-block;
+  background: #fad932;
+  color: #000000;
+  padding: 12px 55px;
+  border-radius: 30px;
+  border: 1px solid #fad932;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.contact_section .form_container .btn_box button:hover {
+  background: transparent;
+  color: #fad932;
+}
+
+.contact_section .img-box {
+  margin-bottom: 25px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.contact_section .img-box img {
+  width: 100%;
+  height: auto;
+}
+
+.contact_section .contact_info h4 {
+  color: #fad932;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.contact_section .contact_info p {
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.contact_section .contact_info p i {
+  margin-right: 8px;
+  color: #fad932; /* Icon color */
+}
+
+.contact_section .map_placeholder {
+  margin-top: 20px;
+  border: 1px solid #fad932;
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: rgba(250, 217, 50, 0.1); /* Light yellow background */
+}
+/* end contact section */
+
 /* info section */
 .info_section {
   position: relative;
@@ -1054,16 +1187,24 @@ a:focus {
 /* end info section */
 /* footer section*/
 .footer_section {
+  background-color: #000000; /* Darker background for the footer */
   color: #ffffff;
+  padding: 20px 0; /* Padding for the section */
+  text-align: center; /* Center the content */
 }
 
 .footer_section p {
   margin: 0;
-  padding: 20px 0;
+  font-size: 0.9rem; /* Slightly adjust font size */
 }
 
 .footer_section a {
-  color: #ffffff;
+  color: #fad932; /* Use the site's accent color for links */
+  text-decoration: none;
+}
+
+.footer_section a:hover {
+  text-decoration: underline;
 }
 
 .modal-dialog {
